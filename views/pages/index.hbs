@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- script and meta tags -->
+        {{>include}}
+    </head>
+
+    <body>
+        <!-- render header partial -->
+        {{>header}}
+
+        <div id="bg-map"></div>
+        
+        <div id="container">
+            <div id="main">
+                <form>
+                    <div id="location-name"> </div>
+                    <div class="search-bar">
+                        <input type="text" name="" placeholder="search location" class="search-txt">
+                        <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="get-location">
+                        <button type="button" class="location-btn"><i class="fas fa-location-arrow"></i></button>
+                    </div>
+                </form>
+                <div id="forecast">
+                    <div id="temperature"></div>
+                    <div id="summary"></div>
+                    <div id="rain"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- render footer partial -->
+        {{>footer}}
+        <script src="/js/script.js"></script>
+    </body>
+</html>

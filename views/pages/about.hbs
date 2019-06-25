@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- script and meta tags -->
+        {{>include}}
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+         <!-- render header partial -->
+         {{>header}}
+
+         <div  id="container">
+            <div id="main">
+                <h3>{{message}}</h3>
+            </div>
+        </div>
+        
+        <!-- render footer partial -->
+        {{>footer}}
+    </body>
+</html>
