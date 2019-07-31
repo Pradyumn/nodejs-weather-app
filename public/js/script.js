@@ -16,18 +16,19 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const location = search.value;
-    const url = '/weather?location=' + encodeURIComponent(location);
+    const url = `/weather?location=${encodeURIComponent(location)}`;
+
+    if(location == '') {
+        return;
+    }
 
     fetch(url).then((response) => {
         response.json().then((data) => { 
-            locationName.innerHTML = '<h2>' + data.location + '</h2>';
-            forecastTemp.innerHTML = '<h1>' + data.temp + '</h1>';
-            weatherSummary.innerHTML = '<h3>' + data.summary + '</h3>';
-
+            locationName.innerHTML = `<h2>${data.location}</h2>`;
+            forecastTemp.innerHTML = `<h1>${data.temp}</h1>`;
+            weatherSummary.innerHTML = `<h3>${data.summary}</h3>`;
             const coordinates =  data.latitude + ',' + data.longitude;
-            bodyBg.style.backgroundImage = 'url(\'' + mapURL + encodeURIComponent(coordinates) + apiAuth + '\')';
-            console.log(mapURL + encodeURIComponent(coordinates) + apiAuth);
-            console.log(data);
+            bodyBg.style.backgroundImage = `url('${mapURL}${encodeURIComponent(coordinates)}${apiAuth}')`;
         });
     });
 });

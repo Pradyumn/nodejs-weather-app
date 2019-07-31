@@ -102,14 +102,6 @@ app.get('/weather', (req, res) => {
 });
 
 // 404 handling
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: 'Error-404',
-        name: 'Pradyumn Singh',
-        message: 'help article not found'
-    })
-});
-
 app.get('*', (req, res) => {
     res.render('404', {
         title: 'Error-404',
